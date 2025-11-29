@@ -7,6 +7,7 @@ Description:
     This project implements a CTR prediction model using DIN (Deep Interest Network).
     It utilizes BERT for semantic warm-up of news embeddings and adopts a 
     two-stage training strategy (Warm-up + Fine-tuning).
+    Run the test.py test environment before running the code.
     Please pay attention to the text prompt, which tells you where the code is running.
 """
 
