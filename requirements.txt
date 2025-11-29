@@ -1,0 +1,8 @@
+numpy>=1.24.0
+pandas>=2.0.0
+torch>=2.0.0
+scikit-learn
+tqdm
+sentence-transformers
+torch-rechub
+tensorflow  # 用于 pad_sequences, 或者只装 keras-preprocessing
