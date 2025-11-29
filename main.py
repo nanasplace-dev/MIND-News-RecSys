@@ -1,7 +1,8 @@
 """
 MIND News Recommendation System with BERT + DIN
-Author: [Your Name]
+Author: [Jiaxi]
 Date: 2025-11-29
+Version: 1
 Description: 
     This project implements a CTR prediction model using DIN (Deep Interest Network).
     It utilizes BERT for semantic warm-up of news embeddings and adopts a 
@@ -62,7 +63,7 @@ def seed_everything(seed=Config.SEED):
 
 # --- 2. Data Processing Utils ---
 def load_raw_data():
-    print("🚀 Loading raw data...")
+    print("Loading raw data...")
     news_cols = ['news_id', 'category', 'subcategory', 'title', 'abstract', 'url', 'title_entities', 'abstract_entities']
     behaviors_cols = ['impression_id', 'user_id', 'time', 'history', 'impressions']
 
@@ -73,7 +74,7 @@ def load_raw_data():
         valid_news = pd.read_csv(f'{Config.VAL_PATH}/news.tsv', sep='\t', header=None, names=news_cols)
         valid_behaviors = pd.read_csv(f'{Config.VAL_PATH}/behaviors.tsv', sep='\t', header=None, names=behaviors_cols)
     except FileNotFoundError:
-        print("❌ Error: Data files not found. Please check Config.TRAIN_PATH.")
+        print(" Error: Data files not found. Please check Config.TRAIN_PATH.")
         exit(1)
     
     # Concat news for full vocabulary
@@ -127,7 +128,7 @@ def process_behaviors(df, mode='train', neg_ratio=4):
 
 # --- 3. Feature Engineering ---
 def build_features(train_df, val_df, all_news):
-    print("🛠 Building features & encoders...")
+    print("Building features & encoders...")
     
     # 3.1 Label Encoding User & News
     lbe_user = LabelEncoder()
@@ -190,7 +191,7 @@ def build_features(train_df, val_df, all_news):
 
 # --- 4. BERT Warm-up ---
 def get_bert_embeddings(all_news, lbe_news, vocab_size_news):
-    print("🤖 Generating BERT embeddings...")
+    print(" Generating BERT embeddings...")
     # Initialize zero matrix (Row 0 is padding)
     pretrained_emb = np.zeros((vocab_size_news, Config.EMBEDDING_DIM))
     
@@ -259,7 +260,7 @@ if __name__ == "__main__":
     pretrained_emb = get_bert_embeddings(all_news, lbe_news, vocab_news)
     
     # 4. Model Definition
-    print("🏗 Defining DIN Model...")
+    print("Defining DIN Model...")
     # Fix: use safe vocab size
     user_cols = [SparseFeature("user_id_idx", vocab_size=vocab_user + 100, embed_dim=Config.EMBEDDING_DIM)]
     item_cols = [
@@ -284,9 +285,9 @@ if __name__ == "__main__":
             try:
                 param.data.copy_(pretrained_emb)
                 embedding_param = param
-                print("✅ BERT weights injected.")
+                print(" BERT weights injected.")
             except Exception as e:
-                print(f"❌ Weight Injection Failed: {e}")
+                print(f" Weight Injection Failed: {e}")
             break
             
     # 6. DataLoader
@@ -297,10 +298,10 @@ if __name__ == "__main__":
                                                                batch_size=Config.BATCH_SIZE, num_workers=0)
     
     # 7. Training Strategy
-    print(f"🚀 Training on Device: {Config.DEVICE}")
+    print(f"Training on Device: {Config.DEVICE}")
     
     # Stage 1: Warm-up
-    print("🔥 Stage 1: Warm-up...")
+    print(" Stage 1: Warm-up...")
     if embedding_param is not None:
         embedding_param.requires_grad = False
         
@@ -309,7 +310,7 @@ if __name__ == "__main__":
     trainer.fit(train_loader, val_loader)
     
     # Stage 2: Fine-tuning
-    print("🚀 Stage 2: Fine-tuning...")
+    print(" Stage 2: Fine-tuning...")
     if embedding_param is not None:
         embedding_param.requires_grad = True
         
@@ -318,7 +319,7 @@ if __name__ == "__main__":
     trainer.fit(train_loader, val_loader)
     
     # 8. Final Evaluation
-    print("📊 Evaluating...")
+    print("Evaluating...")
     model.eval()
     # Fix: pass model explicitly to predict
     y_pred = trainer.predict(model, val_loader)
@@ -331,4 +332,4 @@ if __name__ == "__main__":
     
     # Save
     torch.save(model.state_dict(), 'din_best_model.pth')
-    print("✅ Training Complete. Model saved.")
+    print("Training Complete. Model saved.")
