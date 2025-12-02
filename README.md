@@ -42,7 +42,7 @@ To tackle data sparsity, the model constructs a dense, hierarchical representati
 
 ## Quick Start
 1. Install dependencies: `pip install -r requirements.txt`
-2. Download MIND Dataset into `data/` folder.
+2. Download MIND Dataset into `data/` folder. https://msnews.github.io/ [![Dataset](https://img.shields.io/badge/Dataset-MIND-blue.svg)](https://msnews.github.io/)
 3. Run training: `python main.py`
 
 ##  Advantage
