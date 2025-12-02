@@ -4,7 +4,7 @@
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 [![Dataset](https://img.shields.io/badge/Dataset-MIND-blue.svg)](https://msnews.github.io/)
 
-This project implements a Deep Interest Network (DIN) for news recommendation on the Microsoft News Dataset(MIND，A Large-Scale English Dataset for News Recommendation Research). 
+This project implements a Deep Interest Network (DIN) for news recommendation on the Microsoft News Dataset(MIND, A Large-Scale English Dataset for News Recommendation Research). 
 It features a Semantic Warm-up strategy using BERT embeddings to solve the item cold-start problem.
 
 ## Performance (MIND-Large Validation) compared with SOTA
